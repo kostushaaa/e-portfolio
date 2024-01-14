@@ -2,19 +2,19 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #343a40; /* Темный фон */
-    color: #dee2e6; /* Светлый цвет текста */
+    background-color: #343a40;
+    color: #dee2e6;
 }
 
 header {
-    background-color: #0056b3; /* Темно-синий цвет для заголовка */
+    background-color: #0056b3;
     color: white;
     text-align: center;
     padding: 1em 0;
 }
 
 .portfolio-section {
-    background-color: #454d55; /* Темно-серый цвет для секций */
+    background-color: #454d55;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -27,26 +27,26 @@ header {
 }
 
 h2, h3 {
-    color: #17a2b8; /* Голубой цвет для заголовков */
+    color: #17a2b8;
 }
 
 a {
-    color: #17a2b8; /* Голубой цвет для ссылок */
+    color: #17a2b8;
     text-decoration: none;
     transition: color 0.3s;
 }
 
 a:visited {
-    color: #17a2b8; /* Голубой цвет для посещенных ссылок */
+    color: #17a2b8;
 }
 
 a:hover {
     text-decoration: underline;
-    color: #138496; /* Светло-голубой цвет при наведении */
+    color: #138496;
 }
 
 a:active {
-    color: #0a5a7c; /* Темно-голубой цвет при нажатии */
+    color: #0a5a7c;
 }
 
 ul, ol {
@@ -59,7 +59,7 @@ li {
 
 .profile-info {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .profile-photo-container {
@@ -74,10 +74,12 @@ li {
 
 .personal-details {
     margin-left: 20px;
+    flex: 1; /* Равномерное распределение оставшегося пространства */
 }
 
 .interview-info {
     margin-left: 20px;
+    flex: 1; /* Равномерное распределение оставшегося пространства */
 }
 
 .file-upload {
@@ -113,7 +115,7 @@ li {
 
 .file-list div a {
     margin-left: 10px;
-    color: #17a2b8; /* Голубой цвет для файлов */
+    color: #17a2b8;
     text-decoration: none;
 }
 
@@ -128,23 +130,21 @@ li {
     border-radius: 5px;
     margin-bottom: 10px;
     text-decoration: none;
-    color: #17a2b8; /* Голубой цвет для файлов */
+    color: #17a2b8;
     transition: background-color 0.3s;
 }
 
 .file-download a:hover {
-    background-color: #2c3136; /* Темно-серый цвет при наведении */
+    background-color: #2c3136;
 }
 
-
-
 #datetime {
-    color: #ffffff; /* Цвет текста даты и времени */
+    color: #ffffff;
 }
 
 #copyButton {
-    background-color: #007bff; /* Цвет фона кнопки "Copy" */
-    color: white; /* Цвет текста на кнопке "Copy" */
+    background-color: #007bff;
+    color: white;
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
@@ -154,5 +154,23 @@ li {
 }
 
 #copyButton:hover {
-    background-color: #0056b3; /* Цвет фона при наведении на кнопку "Copy" */
+    background-color: #0056b3;
+}
+
+@media screen and (max-width: 600px) {
+    .profile-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-photo {
+        max-width: 100%; /* Фото занимает максимальную ширину на мобильных устройствах */
+        margin-bottom: 10px;
+    }
+
+    .personal-details,
+    .interview-info {
+        width: 100%;
+        text-align: left;
+    }
 }

@@ -13,10 +13,10 @@
 <body>
 <header>
     <h1>Mein e-Portfolio</h1>
-    <h3>Current date and time:</h3>
-    <span id="datetime"></span>
-    <!--    <span>.              .</span>-->
-    <button id="copyButton" data-clipboard-target="#datetime">Copy</button>
+    <h3>Current date and time:  <span id="datetime"></span>
+        <!--    <span>.              .</span>-->
+        <button id="copyButton" data-clipboard-target="#datetime">Copy</button></h3>
+
 </header>
 
 <section id="personal-info" class="portfolio-section">
@@ -29,7 +29,7 @@
         </div>
         <div class="personal-details">
             <p><strong>Name:</strong> Kostiantyn Cheshykhin</p>
-            <p><strong>Klasse:</strong> 10Fia</p>
+            <p><strong>Klasse:</strong> FIa26</p>
             <p><strong>Schule:</strong> <a href="https://www.ovm-kassel.info/"
                                            target="_blank">Oskar-von-Miller-Kassel</a></p>
             <p><strong>Beginn der Schullaufbahn:</strong> 01.09.2023</p>
@@ -77,32 +77,37 @@
     <div class="interview-info">
         <p><strong>Drehbuch (Ablauf):</strong> Das Interview wird folgende Themen abdecken: Informationssicherheit,
             Datenschutz, IT-Sicherheit in der Firma.</p>
-<!--        <h3>Fragen</h3>-->
-        <div class="file-download">
-            <a href="interview/Fragen.pdf" download>
-                <h3>Fragen</h3>
-            </a>
-        </div>
-        <p><strong>Präsentation der Interviewergebnisse (max. 10 Min):</strong> Die Ergebnisse des Interviews werden
-            aufbereitet und in einer Präsentation von maximal 10 Minuten vorgestellt.</p>
+        <!--        <h3>Fragen</h3>-->
+
     </div>
+    <div class="file-download">
+        <a href="interview/Fragen.pdf" download>
+            <h3>Fragen</h3>
+            <p>Download</p>
+        </a>
+
+
+        <a href="interview/IT-Sicherheit.pptx" download>
+            <h3>Präsentation</h3>
+            <p>Download</p>
+        </a>
+
+    </div>
+    <p><strong>Präsentation der Interviewergebnisse (max. 10 Min):</strong> Die Ergebnisse des Interviews werden
+        aufbereitet und in einer Präsentation von maximal 10 Minuten vorgestellt.</p>
 </section>
 
 <section class="portfolio-section">
     <div class="section-header">
-        <h2>Files</h2>
+        <h2>Files &(Templates)</h2>
     </div>
+
     <div>
         <div class="file-download">
             <a href="interview/Einwilligung.pdf" download>
                 <h3>Einwilligung Template</h3>
                 <p>Download</p>
             </a>
-            <a href="interview/U_Einwilligung.pdf" download>
-                <h3>Untergeschriebene Einwilligung</h3>
-                <p>Download</p>
-            </a>
-
         </div>
     </div>
 
@@ -113,10 +118,15 @@
     <div class="section-header">
         <h2>Datenschutzrechtliche Erklärung</h2>
     </div>
-    <p>Der Interview-Partner hat folgende datenschutzrechtliche Erklärung abgegeben: [Erklärung]</p>
+    <p>Der Interviewpartner hat die folgende Datenschutzerklärung bereitgestellt und unterzeichnet: </p>
+    <div class="file-download">
+        <a href="interview/U_Einwilligung.pdf" download>
+            <h3>Untergeschriebene Einwilligung</h3>
+            <p>Download</p>
+        </a>
+    </div>
 </section>
 
 <script src="script.js"></script>
 </body>
-
 </html>
