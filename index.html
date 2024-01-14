@@ -4,93 +4,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <!--    <link rel="stylesheet" href="styles.css">-->
+    <link rel="stylesheet" href="dark_styles.css">
     <title>Mein e-Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
 </head>
 
 <body>
-    <header>
-        <h1>Mein e-Portfolio</h1>
-        <p>Link bis 10.01.2024 verfügbar</p>
-    </header>
+<header>
+    <h1>Mein e-Portfolio</h1>
+    <h3>Current date and time:</h3>
+    <span id="datetime"></span>
+    <!--    <span>.              .</span>-->
+    <button id="copyButton" data-clipboard-target="#datetime">Copy</button>
+</header>
 
-    <section id="personal-info" class="portfolio-section">
-        <div class="section-header">
-            <h2>Persönliche Informationen</h2>
+<section id="personal-info" class="portfolio-section">
+    <div class="section-header">
+        <h2>Persönliche Informationen</h2>
+    </div>
+    <div class="profile-info">
+        <div class="profile-photo-container">
+            <img src="assets/KostiaPhoto.jpg" alt="Ihr Foto" class="profile-photo">
         </div>
-        <div class="profile-info">
-            <div class="profile-photo-container">
-                <img src="KostiaPhoto.jpg" alt="Ihr Foto" class="profile-photo">
-            </div>
-            <div class="personal-details">
-                <p><strong>Name:</strong> Kostiantyn Cheshykhin</p>
-                <p><strong>Klasse:</strong> 10Fia</p>
-                <p><strong>Schule:</strong> <a href="https://www.ovm-kassel.info/"
-                        target="_blank">Oskar-von-Miller-Kassel</a></p>
-                <p><strong>Beginn der Schullaufbahn:</strong> 01.09.2023</p>
-                <p><strong>Email:</strong> <a
-                        href="mailto:kostiantyncheshykhin@gmail.com">kostiantyncheshykhin@gmail.com</a></p>
-                <p><strong>Telefon:</strong> <a href="tel:+491604521129">+49 160 4521129</a></p>
-            </div>
+        <div class="personal-details">
+            <p><strong>Name:</strong> Kostiantyn Cheshykhin</p>
+            <p><strong>Klasse:</strong> 10Fia</p>
+            <p><strong>Schule:</strong> <a href="https://www.ovm-kassel.info/"
+                                           target="_blank">Oskar-von-Miller-Kassel</a></p>
+            <p><strong>Beginn der Schullaufbahn:</strong> 01.09.2023</p>
+            <p><strong>Email:</strong> <a
+                    href="mailto:kostiantyncheshykhin@gmail.com">kostiantyncheshykhin@gmail.com</a></p>
+            <p><strong>Telefon:</strong> <a href="tel:+491604521129">+49 160 4521129</a></p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="learning-products" class="portfolio-section">
-        <div class="section-header">
-            <h2>Lernprodukte</h2>
-        </div>
-        <ul>
-            <li><strong>Begriffe der IT-Sicherheit:</strong> Erklärung der Begriffe Informationssicherheit,
-                IT-Sicherheit und Cybersecurity sowie Eingrenzung ihrer Bereiche.</li>
-            <li><strong>DSGVO-Begriffe:</strong> Erklärung der Begriffe Vertraulichkeit, Integrität, Verfügbarkeit,
-                Authentizität usw. im Kontext der DSGVO.</li>
-            <li><strong>Gesetzliche Vorgaben:</strong> Benennung und Erläuterung von gesetzlichen Vorgaben und Standards
-                für IT-Sicherheit und Sicherheit von personenbezogenen Daten.</li>
-            <li><strong>BSI-Struktur:</strong> Erklärung der Struktur der Informationen des BSI und Nutzung im
-                Unterricht.</li>
-            <li><strong>Risikobewertung:</strong> Benennung und Erklärung der Vorgehensweise/Faktoren bei der
-                Risikobewertung gemäß DSGVO und BSI-Grundschutz.</li>
-            <li><strong>Vortrag "Hirne Hacken":</strong> Zuordnung der Inhalte des Vortrags zu den Unterrichtsinhalten
-                und Erläuterung von Aussagen.</li>
-            <li><strong>Selbstlernkurs:</strong> Bearbeitung des Selbstlernkurses "Einführung in die Cybersicherheit"
-                zur Unterstützung des Lernens im LF 4. Kurslink: <a
+<section id="learning-products" class="portfolio-section">
+    <div class="section-header">
+        <h2>Lernprodukte</h2>
+    </div>
+    <ul>
+        <li><strong>Begriffe der IT-Sicherheit:</strong> Erklärung der Begriffe Informationssicherheit,
+            IT-Sicherheit und Cybersecurity sowie Eingrenzung ihrer Bereiche.
+        </li>
+        <li><strong>DSGVO-Begriffe:</strong> Erklärung der Begriffe Vertraulichkeit, Integrität, Verfügbarkeit,
+            Authentizität usw. im Kontext der DSGVO.
+        </li>
+        <li><strong>Gesetzliche Vorgaben:</strong> Benennung und Erläuterung von gesetzlichen Vorgaben und Standards
+            für IT-Sicherheit und Sicherheit von personenbezogenen Daten.
+        </li>
+        <li><strong>BSI-Struktur:</strong> Erklärung der Struktur der Informationen des BSI und Nutzung im
+            Unterricht.
+        </li>
+        <li><strong>Risikobewertung:</strong> Benennung und Erklärung der Vorgehensweise/Faktoren bei der
+            Risikobewertung gemäß DSGVO und BSI-Grundschutz.
+        </li>
+        <li><strong>Vortrag "Hirne Hacken":</strong> Zuordnung der Inhalte des Vortrags zu den Unterrichtsinhalten
+            und Erläuterung von Aussagen.
+        </li>
+        <li><strong>Selbstlernkurs:</strong> Bearbeitung des Selbstlernkurses "Einführung in die Cybersicherheit"
+            zur Unterstützung des Lernens im LF 4. Kurslink: <a
                     href="https://skillsforall.com/course/introduction-to-cybersecurity?courseLang=de-DE&instance_id=969c5ccf-bf6b-4db9-b182-8d0fe69a6337"
                     target="_blank">Einführung in die Cybersicherheit</a></li>
-        </ul>
-    </section>
+    </ul>
+</section>
 
-    <section id="interview" class="portfolio-section">
-        <div class="section-header">
-            <h2>Geplantes Interview</h2>
-        </div>
-        <div class="interview-info">
-            <p><strong>Drehbuch (Ablauf):</strong> Das Interview wird folgende Themen abdecken: Informationssicherheit,
-                Datenschutz, IT-Sicherheit in der Schule.</p>
-            <h3>Fragen</h3>
-            <ol>
-                <li>Wie erklären Sie den Begriff "Informationssicherheit"?</li>
-                <li>Warum ist die DSGVO wichtig und wie beeinflusst sie den Umgang mit personenbezogenen Daten?</li>
-                <li>Können Sie die Bedeutung von "Risikobewertung" im Kontext von IT-Sicherheit erklären?</li>
-                <!-- Fügen Sie weitere Fragen hinzu -->
-            </ol>
-            <p><strong>Präsentation der Interviewergebnisse (max. 10 Min):</strong> Die Ergebnisse des Interviews werden
-                aufbereitet und in einer Präsentation von maximal 10 Minuten vorgestellt.</p>
-
-            <a href="interview/Einwilligung.pdf" download>
-                <h3>Einwilligung</h3>
-                <p>download</p>
+<section id="interview" class="portfolio-section">
+    <div class="section-header">
+        <h2>Geplantes Interview (01.01.2024)</h2>
+    </div>
+    <div class="interview-info">
+        <p><strong>Drehbuch (Ablauf):</strong> Das Interview wird folgende Themen abdecken: Informationssicherheit,
+            Datenschutz, IT-Sicherheit in der Firma.</p>
+<!--        <h3>Fragen</h3>-->
+        <div class="file-download">
+            <a href="interview/Fragen.pdf" download>
+                <h3>Fragen</h3>
             </a>
         </div>
-    </section>
+        <p><strong>Präsentation der Interviewergebnisse (max. 10 Min):</strong> Die Ergebnisse des Interviews werden
+            aufbereitet und in einer Präsentation von maximal 10 Minuten vorgestellt.</p>
+    </div>
+</section>
 
-    <section id="data-protection" class="portfolio-section">
-        <div class="section-header">
-            <h2>Datenschutzrechtliche Erklärung</h2>
+<section class="portfolio-section">
+    <div class="section-header">
+        <h2>Files</h2>
+    </div>
+    <div>
+        <div class="file-download">
+            <a href="interview/Einwilligung.pdf" download>
+                <h3>Einwilligung Template</h3>
+                <p>Download</p>
+            </a>
+            <a href="interview/U_Einwilligung.pdf" download>
+                <h3>Untergeschriebene Einwilligung</h3>
+                <p>Download</p>
+            </a>
+
         </div>
-        <p>Der Interview-Partner hat folgende datenschutzrechtliche Erklärung abgegeben: [Erklärung]</p>
-    </section>
+    </div>
 
-    <script src="script.js"></script>
+
+</section>
+
+<section id="data-protection" class="portfolio-section">
+    <div class="section-header">
+        <h2>Datenschutzrechtliche Erklärung</h2>
+    </div>
+    <p>Der Interview-Partner hat folgende datenschutzrechtliche Erklärung abgegeben: [Erklärung]</p>
+</section>
+
+<script src="script.js"></script>
 </body>
 
 </html>
