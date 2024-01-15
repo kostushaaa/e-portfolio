@@ -26,3 +26,17 @@ copyButton.addEventListener('click', function() {
 
     alert('Copied to clipboard!');
 });
+
+
+const themeSwitcher = document.getElementById('themeSwitcher');
+const themeStylesheet = document.getElementById('themeStyles');
+
+// Проверяем значение переключателя и применяем соответствующий стиль
+themeSwitcher.addEventListener('change', () => {
+    console.log("Switch")
+    if (themeSwitcher.checked) {
+        themeStylesheet.href = 'dark_styles.css'; // Ссылка на темные стили
+    } else {
+        themeStylesheet.href = 'styles.css'; // Ссылка на светлые стили
+    }
+});

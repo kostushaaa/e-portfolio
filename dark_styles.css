@@ -6,6 +6,13 @@ body {
     color: #dee2e6;
 }
 
+#themeToggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
 header {
     background-color: #0056b3;
     color: white;
@@ -151,6 +158,10 @@ li {
     cursor: pointer;
     transition: background-color 0.3s;
     margin-top: 10px;
+}
+
+#currentDate {
+    color: #17a2b8;
 }
 
 #copyButton:hover {
