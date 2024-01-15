@@ -2,20 +2,28 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa; /* Цвет фона */
+    background-color: #f8f9fa; /* Светлый фон */
+    color: #495057; /* Цвет текста */
+}
+
+#themeToggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
 }
 
 header {
-    background-color: #3498db;
+    background-color: #007bff; /* Голубой цвет для шапки */
     color: white;
     text-align: center;
     padding: 1em 0;
 }
 
 .portfolio-section {
-    background-color: #ffffff; /* Белый цвет для секций */
+    background-color: #e9ecef; /* Светлый фон с небольшой тенью */
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для поднятия блоков */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin: 20px;
 }
@@ -26,26 +34,26 @@ header {
 }
 
 h2, h3 {
-    color: #3498db;
+    color: #007bff; /* Голубой цвет для заголовков */
 }
 
 a {
-    color: #3498db;
+    color: #007bff;
     text-decoration: none;
-    transition: color 0.3s; /* Плавное изменение цвета при переходе */
+    transition: color 0.3s;
 }
 
 a:visited {
-    color: #3498db;
+    color: #007bff;
 }
 
 a:hover {
     text-decoration: underline;
-    color: #2077c8; /* Цвет при наведении */
+    color: #0056b3; /* Темно-голубой цвет при наведении */
 }
 
 a:active {
-    color: #0056b3; /* Цвет при нажатии */
+    color: #003366; /* Темно-синий цвет при активации */
 }
 
 ul, ol {
@@ -58,7 +66,7 @@ li {
 
 .profile-info {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .profile-photo-container {
@@ -68,15 +76,17 @@ li {
 .profile-photo {
     max-width: 150px;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень для изображения */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .personal-details {
     margin-left: 20px;
+    flex: 1;
 }
 
 .interview-info {
     margin-left: 20px;
+    flex: 1;
 }
 
 .file-upload {
@@ -87,7 +97,7 @@ li {
 }
 
 .file-label {
-    background-color: #3498db;
+    background-color: #007bff;
     color: white;
     padding: 10px 15px;
     cursor: pointer;
@@ -112,11 +122,9 @@ li {
 
 .file-list div a {
     margin-left: 10px;
-    color: #3498db;
+    color: #007bff;
     text-decoration: none;
 }
-
-/* Стили для каждого файла */
 
 .file-download {
     margin-top: 20px;
@@ -124,26 +132,30 @@ li {
 
 .file-download a {
     display: block;
-    background-color: #ecf0f1;
+    background-color: #f8f9fa;
     padding: 10px;
     border-radius: 5px;
     margin-bottom: 10px;
     text-decoration: none;
-    color: #3498db;
+    color: #007bff;
     transition: background-color 0.3s;
 }
 
 .file-download a:hover {
-    background-color: #d5d8dc;
+    background-color: #e9ecef;
+}
+
+#currentDate {
+    color: white;
 }
 
 #datetime {
-    color: #ffffff; /* Цвет текста даты и времени */
+    color: #000000; /* Черный цвет для времени */
 }
 
 #copyButton {
-    background-color: #28a745; /* Цвет фона кнопки "Copy" */
-    color: white; /* Цвет текста на кнопке "Copy" */
+    background-color: #007bff;
+    color: white;
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
@@ -153,7 +165,23 @@ li {
 }
 
 #copyButton:hover {
-    background-color: #218838; /* Цвет фона при наведении на кнопку "Copy" */
+    background-color: #0056b3;
 }
 
+@media screen and (max-width: 600px) {
+    .profile-info {
+        flex-direction: column;
+        align-items: center;
+    }
 
+    .profile-photo {
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .personal-details,
+    .interview-info {
+        width: 100%;
+        text-align: left;
+    }
+}
