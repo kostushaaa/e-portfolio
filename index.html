@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="themeStylesLight" rel="stylesheet" href="dark_styles.css">
+    <link id="themeStyles" rel="stylesheet" href="styles.css">
+    <title>Mein e-Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="assets/icon_e.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+    <script src="content.js"></script>
+    <style>
+        /* Стили для переключателя темы */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:focus + .slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        /* Дополнительные стили для красивого внешнего вида */
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+        form {
+            width: fit-content;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .selectDiv {
+            position: relative;
+            width: 230px;
+            height: 40px;
+            /*margin: 0 auto;*/
+
+            &[data-state="active"] {
+                .selectTitle {
+                    &::before {
+                        transform: translate(-3px, -50%) rotate(-45deg);
+                    }
+
+                    &::after {
+                        transform: translate(3px, -50%) rotate(45deg);
+                    }
+                }
+
+                .selectContent {
+                    opacity: 1;
+                }
+
+                .selectLabel + .selectInput + .selectLabel {
+                    max-height: 40px;
+                    border-top-width: 1px;
+                }
+            }
+        }
+        .selectTitle {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding: 8px 16px;
+
+            border-radius: 5px;
+            border: solid 1px #c7ccd1;
+
+            cursor: pointer;
+
+            &::before,
+            &::after {
+                content: "";
+
+                position: absolute;
+                top: 50%;
+                right: 16px;
+
+                display: block;
+                width: 10px;
+                height: 2px;
+
+                transition: all 0.3s ease-out;
+
+                background-color: #333333;
+
+                transform: translate(-3px, -50%) rotate(45deg);
+            }
+            &::after {
+                transform: translate(3px, -50%) rotate(-45deg);
+            }
+
+            &:hover {
+                border-color: #D8093A;
+
+                &::before,
+                &::after {
+                    background-color: #D8093A;
+                }
+            }
+        }
+        .reset {
+            display: flex;
+            width: 230px;
+            padding: 8px 16px;
+            margin: 0 auto;
+            margin-bottom: 10px;
+
+            border: solid 1px #c7ccd1;
+            border-radius: 5px;
+
+            transition: all 0.2s ease-out;
+
+            cursor: pointer;
+
+            font-weight: bold;
+
+            background-color: #ffffff;
+            color: #333333;
+
+            &:hover {
+                background-color: #D8093A;
+                color: #ffffff;
+            }
+        }
+        .selectContent {
+            position: absolute;
+            top: 40px;
+            left: 3px;
+
+            display: flex;
+            flex-direction: column;
+            width: calc(100% - 6px);
+
+            background-color: #ffffff;
+
+            border: 1px solid #c7ccd1;
+            border-top: none;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+
+            transition: all 0.3s ease-out;
+
+            opacity: 0;
+            z-index: 8;
+        }
+        .selectInput {
+            display: none;
+
+            &:checked + label {
+                background-color: #dedede;
+            }
+            &:disabled + label {
+                opacity: 0.6;
+                pointer-events: none;
+            }
+        }
+        .selectLabel {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 40px;
+            max-height: 0;
+            padding: 0 16px;
+
+            transition: all 0.2s ease-out;
+
+            cursor: pointer;
+
+            overflow: hidden;
+
+            & + input + & {
+                border-top: 0 solid #C7CCD160;
+            }
+
+            &:hover {
+                background-color: #D8093A !important;
+
+                color: #ffffff;
+            }
+        }
+
+        .lf_switch {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-wrap: nowrap;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px;
+        }
+
+        button.active {
+            background-color: yellow; /* Подсветка выбранной кнопки */
+        }
+
+
+    </style>
+</head>
+
+<body>
+<header>
+    <h1>Mein e-Portfolio</h1>
+    <h3 id="currentDate">Current date and time: <span id="datetime"></span>
+        <!--    <span>.              .</span>-->
+        <button id="copyButton" data-clipboard-target="#datetime">Copy</button>
+    </h3>
+    <!-- Добавляем переключатель темы -->
+    <label id="themeToggle" class="switch">
+        <input type="checkbox" id="themeSwitcher">
+        <span class="slider round"></span>
+    </label>
+
+</header>
+
+<section id="personal-info" class="portfolio-section">
+    <div class="section-header">
+        <h2>Persönliche Informationen</h2>
+    </div>
+    <div class="profile-info">
+        <div class="profile-photo-container">
+            <img src="assets/KostiaPhoto.jpg" alt="Ihr Foto" class="profile-photo">
+        </div>
+        <div class="personal-details">
+            <p><strong>Name:</strong> Kostiantyn Cheshykhin</p>
+            <p><strong>Klasse:</strong> FIa26</p>
+            <p><strong>Schule:</strong> <a href="https://www.ovm-kassel.info/"
+                                           target="_blank">Oskar-von-Miller-Kassel</a></p>
+            <p><strong>Beginn der Schullaufbahn:</strong> 01.09.2023</p>
+            <p><strong>Email:</strong> <a
+                    href="mailto:kostiantyncheshykhin@gmail.com">kostiantyncheshykhin@gmail.com</a></p>
+            <p><strong>Telefon:</strong> <a href="tel:+491604521129">+49 160 4521129</a></p>
+        </div>
+    </div>
+</section>
+
+<div class="lf_switch">
+    <button id="lf_1" onclick="selectLernfeld(1)">Lernfeld_1</button>
+    <button id="lf_2" onclick="selectLernfeld(2)">Lernfeld_2</button>
+    <button id="lf_3" onclick="selectLernfeld(3)">Lernfeld_3</button>
+    <button id="lf_4" onclick="selectLernfeld(4)">Lernfeld_4</button>
+    <button id="lf_5" onclick="selectLernfeld(5)">Lernfeld_5</button>
+</div>
+<div id="content"></div>
+
+
+<script src="script.js"></script>
+</body>
+</html>

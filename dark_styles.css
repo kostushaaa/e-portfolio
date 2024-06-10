@@ -1,0 +1,187 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #343a40; /* Темно-серый фон */
+    color: #adb5bd; /* Светло-серый текст */
+}
+
+#themeToggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+header {
+    background-color: #007bff; /* Синий цвет для шапки */
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+.portfolio-section {
+    background-color: #212529; /* Темно-серый фон */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2, h3 {
+    color: #007bff; /* Синий цвет для заголовков */
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:visited {
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #0056b3; /* Темно-голубой цвет при наведении */
+}
+
+a:active {
+    color: #003366; /* Темно-синий цвет при активации */
+}
+
+ul, ol {
+    margin-bottom: 10px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+.profile-info {
+    display: flex;
+    align-items: flex-start;
+}
+
+.profile-photo-container {
+    margin-right: 20px;
+}
+
+.profile-photo {
+    max-width: 150px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.personal-details {
+    margin-left: 20px;
+    flex: 1;
+}
+
+.interview-info {
+    margin-left: 20px;
+    flex: 1;
+}
+
+.file-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.file-label {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.file-input {
+    display: none;
+}
+
+.file-list {
+    text-align: left;
+    margin-top: 10px;
+}
+
+.file-list div {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.file-list div a {
+    margin-left: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.file-download {
+    margin-top: 20px;
+}
+
+.file-download a {
+    display: block;
+    background-color: #343a40; /* Темно-серый фон */
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #007bff;
+    transition: background-color 0.3s;
+}
+
+.file-download a:hover {
+    background-color: #212529; /* Еще более темный фон */
+}
+
+#currentDate {
+    color: white;
+}
+
+#datetime {
+    color: #ffffff; /* Белый цвет для времени */
+}
+
+#copyButton {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+#copyButton:hover {
+    background-color: #0056b3;
+}
+
+@media screen and (max-width: 600px) {
+    .profile-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-photo {
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .personal-details,
+    .interview-info {
+        width: 100%;
+        text-align: left;
+    }
+}
